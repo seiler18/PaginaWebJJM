@@ -1,36 +1,44 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Raleway, sans-serif;
     margin: 0;
     padding: 0;
-    background: gray
+    background: #f5f5f5;
 }
-h1{
+
+/* Títulos */
+h1 {
     font-size: 40px;
 }
-h2{
+
+h2 {
     font-size: 25px;
 }
-h3{
-    font-size: 20px;
 
+h3 {
+    font-size: 20px;
 }
 
-.imagen{
-    padding-top: 20px;
-    padding-bottom: 20px;
+/* Imágenes */
+.imagen {
+    padding: 20px;
     border-radius: 20%;
 }
 
+/* Contenedor principal con Flexbox */
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centra verticalmente el contenido */
+    min-height: 100vh; /* Asegura que el contenido ocupe al menos el alto de la ventana */
     padding: 20px;
 }
 
-
+/* Secciones con Flexbox */
 section {
-    width: 80%; 
+    flex: 1; /* Ocupa todo el espacio vertical disponible */
+    width: 80%;
     text-align: center;
     padding: 20px;
     border: 5px solid black;
@@ -38,15 +46,24 @@ section {
     margin: 10px 0;
 }
 
-
+/* Estilos de secciones específicas */
 .Noticias,
 .Deportes,
 .Negocios {
     text-align: center;
-background-color: gray;
+    background-color: #FFFF;
+    transition: background-color 0.3s ease;
 }
 
+/* Cambio de estilo al pasar el mouse */
+.Noticias:hover,
+.Deportes:hover,
+.Negocios:hover {
+    background-color: #000;
+    color: white;
+}
 
+/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -54,22 +71,20 @@ table {
     border: 5px solid black;
 }
 
-/* Nuevos estilos para ocupar todo el ancho de la pantalla */
-
-
 th, td {
     padding: 8px 12px;
     border: 3px solid black;
     font-size: 18px;
 }
 
+/* Video y audio */
 video, audio {
     display: block;
     margin-top: 20px;
     width: 100%;
 }
 
-/* ESTILOS PARA MI NAVBAR */
+/* Barra de navegación */
 nav {
     position: fixed;
     top: 0;
@@ -94,17 +109,31 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: white;
     font-weight: bold;
     font-size: 25px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-decoration 0.3s ease; /* Agregado para transición de text-decoration */
+}
+
+nav a:link {
+    color: black; /* Color de enlace normal */
+    text-decoration: underline; /* Subrayado en el enlace normal */
+}
+
+a:link{
+    color: black; /* Color de enlace normal */
+    text-decoration: underline; /* Subrayado en el enlace normal */
+}
+a:hover{
+    color: #ff9900; /* Color de enlace normal */
+    text-decoration: none; /* Subrayado en el enlace normal */
 }
 
 nav a:hover {
     color: #ff9900;
+    text-decoration: none; /* Quitar subrayado al pasar el mouse */
 }
 
-/* ESTILOS PARA MI BANNER */
+/* Banner */
 .banner {
     text-align: center;
     position: relative;
@@ -116,7 +145,7 @@ nav a:hover {
     height: auto;
 }
 
-/* Estilos para colocarle a mi footer */
+/* Footer */
 .html5-icon {
     max-width: 100px;
     vertical-align: middle;
@@ -124,8 +153,8 @@ nav a:hover {
 }
 
 .site-footer {
-    background-color: black;
-    color: #fff;
+    background-color: #c9d2d0;
+    color: #31231e;
     padding: 20px 0;
     text-align: center;
 }
@@ -134,5 +163,10 @@ nav a:hover {
     margin: 0;
 }
 
-
-
+/* PARA TELEFONOS */
+@media (max-width: 768px) {
+    section {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
