@@ -14,6 +14,7 @@
     <!-- Mi Google Fonts:  -->
     <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Raleway">
+    <script src="./assets/js/script.js"></script>
 </head>
 
 
@@ -24,13 +25,16 @@
             <li><a href="#Inicio">Inicio</a></li>
             <li><a href="#Deportes">Deportes</a></li>
             <li><a href="#Negocios">Negocios</a></li>
+            <li><a href="#Contacto">Contáctanos</a></li>
         </ul>
     </nav>
     <!-- Barra de navegación  -->
     <!-- Banner  -->
+    
     <div class="banner">
         <img src="./assets/img/elfaro.png" id="Inicio" alt="Banner del faro">
     </div>
+    <div id="fecha-hora-banner" class="fecha-hora-banner"></div>
 
 
 <main>
@@ -69,6 +73,9 @@
                     </tr>
                     <tr>
                         <td class="imagen"><img class="imagen" src="./assets/img/NoticiaG1.jpg" width="600" height="600" alt="NoticiaG1"></td>
+                        <div class="contador-articulos">
+                            <p>Artículos: <span id="contador-articulos">0</span></p>
+                        </div>
                     </tr>
                      <!-- NOTICIA 1 -->
 
@@ -173,7 +180,12 @@ Además, el MOP ya trabaja en el proceso de licitación para reparar la vía da�
                     </tr>
                     <tr>
                         <td class="imagen"><img class="imagen" src="./assets/img/deporte1.jpg" width="600" height="600" alt="deporte1"></td>
+                        <div class="contador-articulos">
+                            <p>Artículos: <span id="contador-articulos">0</span></p>
+                        </div>
                     </tr>
+                    
+                    
                      <!-- NOTICIA 1 -->
 
                      
@@ -256,6 +268,9 @@ José Agustín Cristi de Zurich AGF puntualizó que “este buen rendimiento se 
                     </tr>
                     <tr>
                         <td class="imagen"><img class="imagen" src="./assets/img/negocio1.jpg" width="600" height="600" alt="noticia1"></td>
+                        <div class="contador-articulos">
+                            <p>Artículos: <span id="contador-articulos">0</span></p>
+                        </div>
                     </tr>
                      <!-- NOTICIA 1 -->
 
@@ -298,7 +313,24 @@ José Agustín Cristi de Zurich AGF puntualizó que “este buen rendimiento se 
         </div>
     </section>
 
+    <section id="Contacto" class="container">
+        <h1>Contáctanos</h1>
+        <div class="formulario-container">
+            <form id="formulario-contacto" onsubmit="enviarFormulario(event)">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+    
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+    
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+    </section>
 </main>
+
+
 
     <footer class="site-footer">
             <p>&copy; 2023 Jesus Seiler - Jaime Llanca - Mauricio Morel . Hecha para la presentación de HTML5.<img src="./assets/img/html5.png" alt="img html5" class="html5-icon"></p>
