@@ -217,16 +217,3 @@ a:hover{
 #formulario-contacto input[type="submit"]:hover {
     background-color: #ff6600;
 }
-
-.contador-articulos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: gray;
-    padding: 20px;
-    margin: 10px 0;
-    font-size: 25px;
-    font-weight: bold;
-}
