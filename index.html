@@ -14,20 +14,40 @@
     <!-- Mi Google Fonts:  -->
     <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Raleway">
-    <script src="./assets/js/script.js"></script>
+    <!-- Con esto ocupo boostrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
 </head>
 
 
 <body>
     <!-- Barra de navegación  -->
-    <nav>
-        <ul>
-            <li><a href="#Inicio">Inicio</a></li>
-            <li><a href="#Deportes">Deportes</a></li>
-            <li><a href="#Negocios">Negocios</a></li>
-            <li><a href="#Contacto">Contáctanos</a></li>
-        </ul>
+    <nav class="navegacion navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        
+        <!-- Botón de hamburguesa para dispositivos móviles -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Contenedor para alinear la lista de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav"> <!-- Aplicamos la clase ml-auto para alinear a la derecha -->
+                <li class="nav-item ms-3">
+                    <a class="nav-link" href="#Inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Deportes">Deportes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Negocios">Negocios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Contacto">Contáctanos</a>
+                </li>
+            </ul>
+        </div>
     </nav>
+    
     <!-- Barra de navegación  -->
     <!-- Banner  -->
     
@@ -40,106 +60,60 @@
 <main>
     <!-- SECCION DE MIS NOTICIAS -->
     
-    <section class="Noticias container">
+    <section id="Noticias" class="Noticias container">
         <h1>Sección de Noticias</h1>
-        <div class="table-container">
-            <table>
-                <thead>
+        
+            <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead class="thead-dark">
                     <tr>
-                        <th><h2>Noticias Generales</h2></th>
+                      <th><h2>Noticias Generales</h2></th>
                     </tr>
-                </thead>
-                <tbody>
-
-
+                  </thead>
+                  <tbody>
                     <!-- NOTICIA 1 -->
                     <tr>
-                        <td><a href="https://www.msn.com/es-cl/noticias/other/rusia-confirma-la-muerte-de-yevgeny-prigozhin-jefe-del-grupo-wagner-a-dos-meses-de-desafiar-a-putin/ar-AA1fGANH" target="_blank"><h3>Rusia confirma la muerte de Yevgeny Prigozhin, jefe del grupo Wagner, a dos meses de desafiar a Putin</h3></a></td>
+                      <td><a href="https://www.msn.com/es-cl/noticias/other/rusia-confirma-la-muerte-de-yevgeny-prigozhin-jefe-del-grupo-wagner-a-dos-meses-de-desafiar-a-putin/ar-AA1fGANH" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
                     </tr>
                     <tr>
-                        <td>La Agencia Federal de Transporte Aéreo de Rusia confirmó hoy la muerte del jefe del grupo de mercenarios Wagner, Yevgeny Prigozhin, tras estrellarse su avión en Rusia.
-
-                            Además se dio a conocer que los 10 pasajeros que iban a bordo han muerto, según el Ministerio de Emergencias.
-                            
-                            Pese a esto, de momento solo se han podido rescatar 8 cuerpos del total de los tripulantes fallecidos.
-                            
-                            Desde el entorno de Wagner se confirmó además que en el aparato viajaban tanto su jefe como uno de sus comandantes más importantes, el ultraderechista Dmitri Utkin.
-                            
-                            Lee también...: El ascenso y caída de Prigozhin, el hombre que desafió a Putin e intentó un levantamiento en Rusia
-                            
-                            Se trata de un antiguo agente del servicio de inteligencia del ejército y que participó en la incursión rusa en la región ucrania de Donbás tras la anexión ilegal de Crimea en 2014.
-                            
-                            “Se ha iniciado una investigación sobre la catástrofe del avión Embraer que ha ocurrido esta noche en la región de Tver. Según la lista de pasajeros, entre ellos figuran el nombre y el apellido de Yevgueni Prigozhin”, confirmó la Agencia Federal de Transporte Aéreo de Rusia. </td>
+                      <td>ESPACIO NOTICIA</td>
                     </tr>
                     <tr>
-                        <td class="imagen"><img class="imagen" src="./assets/img/NoticiaG1.jpg" width="600" height="600" alt="NoticiaG1"></td>
-                        <div class="contador-articulos">
-                            <p>Artículos: <span id="contador-articulos">0</span></p>
-                        </div>
+                      <td class="imagen"><img class="img-fluid" src="./assets/img/NoticiaG1.jpg" alt="NoticiaG1"></td>
                     </tr>
-                     <!-- NOTICIA 1 -->
-
-                     
+                    <!-- NOTICIA 1 -->
+              
                     <!-- NOTICIA 2 -->
                     <tr>
-                        <td><a href="https://www.msn.com/es-cl/noticias/chile/edificio-kandinsky-la-torre-de-exclusivos-departamentos-que-podr%C3%ADa-derrumbarse-tras-las-lluvias/ar-AA1fGR2G" target="_blank"><h3> Edificio Kandinsky, la torre de exclusivos departamentos que podría derrumbarse tras las lluvias</h3></a></td>
+                      <td><a href="https://www.msn.com/es-cl/noticias/chile/edificio-kandinsky-la-torre-de-exclusivos-departamentos-que-podr%C3%ADa-derrumbarse-tras-las-lluvias/ar-AA1fGR2G" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
                     </tr>
                     <tr>
-                        <td>
-                            El Ministerio de Obras Públicas investiga las causas del enorme socavón ocurrido anoche en la avenida Borgoño, en el límite entre las comunas de Concón y Viña del Mar, en la Región de Valparaíso, y que mantiene cortada la vía ubicada en pleno borde costero, en medio del sistema frontal que afecta a la zona centro sur.
-
-La emergencia partió como un deslizamiento de tierra en una calle que llega hasta el acceso del Edificio Kandinsky, que está construido sobre dunas, y del que fueron evacuadas 25 personas de 11 departamentos. Después, devino en la socavación de la duna y luego de la calzada.
-
-Preliminarmente, se presume que el suceso fue originado por el colapso de un colector de aguas, que además ya había fallado el 10 de agosto y el último fin de semana.
-
-"Ya no solo es un riesgo, sino que se ha socavado completamente la vía inferior, y además socavó la vía que da acceso hacia el edificio (...) esto ha ido avanzando durante las horas y, además, la carga hídrica no ha parado, así que estamos monitoreando", comentó la alcaldesa de Viña del Mar, Macarena Ripamonti.
-
-Sobre las presuntas causas del deslizamiento que derivó en el socavón, planteó que puede haber dos posibilidades: la primera, que la obra del colector "el año 2005 se haya diseñado de manera inadecuada, por lo tanto, la infraestructura hidráulica ha colapsado".
-
-"O bien, existe la posibilidad de que ésta se haya sobrecargado por los aumentos de los ramales el año 2017, y existe un informe técnico de la Dirección de Obras Hidráulicas que no es favorable a esa ampliación de los ramales", apuntó.
-
-El seremi de Obras Públicas, Yanino Riquelme, anunció que van a investigar lo sucedido para "recabar la información respecto a cuáles fueron las indicaciones y por qué se tomó finalmente la medida de sumarle mayor carga a este colector".
-
-Además, el MOP ya trabaja en el proceso de licitación para reparar la vía dañada.
-
-
-                            </td>
+                      <td>
+                        ESPACIO NOTICIA
+                      </td>
                     </tr>
                     <tr>
-                        <td class="imagen"><img class="imagen" alt="NoticiaG2" src="./assets/img/NoticiaG2.jpg" width="600" height="600"></td>
+                      <td class="imagen"><img class="img-fluid" alt="NoticiaG2" src="./assets/img/NoticiaG2.jpg"></td>
                     </tr>
-                     <!-- NOTICIA 2 -->
-
-                     
+                    <!-- NOTICIA 2 -->
+              
                     <!-- NOTICIA 3 -->
                     <tr>
-                        <td><a href="https://www.msn.com/es-cl/noticias/chile/ministra-vallejo-quienes-justifican-el-golpe-de-estado-podr%C3%ADan-darlo-hoy/ar-AA1fGFNT" target="_blank"><h3>Ministra Vallejo: "Quienes justifican el golpe de Estado podrían darlo hoy"</h3></a></td>
+                      <td><a href="https://www.msn.com/es-cl/noticias/chile/ministra-vallejo-quienes-justifican-el-golpe-de-estado-podr%C3%ADan-darlo-hoy/ar-AA1fGFNT" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
                     </tr>
                     <tr>
-                        <td>
-                            Un día después de que la Cámara aprobara leer la controvertida declaración de 1973 en contra del expresidente Salvador Allende, la ministra vocera de Gobierno, Camila Vallejo, dijo este miércoles que "nunca se puede avalar o buscar argumentos que legitimen la ruptura democrática por más diferencias políticas que se puedan tener" y enfatizó que "quienes justifican el golpe de Estado podrían darlo hoy".
-
-                            Vallejo calificó de "retroceso civilizatorio" que se instalen en el debate público argumentos "que aluden a que hubo ciertas razones que llevaron a un golpe".
-                            
-                            La vocera, que ofreció sus declaraciones tras finalizar una visita a San José de Maipo, apuntó a un intento de "reescribir la historia" y llamó a todas las fuerzas políticas a "cuidar y proteger la democracia".
-
-                            Los dichos de la ministra llegan después de que ayer, en la Cámara de Diputados, se leyera una resolución parlamentaria, a petición de la oposición, suscrita hace 50 años que entonces declaró "inconstitucional" el Gobierno democrático de Allende.
-
-                            Aquel texto fue usado durante muchos años como "sustento jurídico" para justificar el golpe militar del 11 de septiembre de 1973, que dio inicio a una cruenta dictadura encabezada por el general Augusto Pinochet (1973-1990), que dejó más de 3.000 opositores ejecutados.
-                            
-                            La lectura en la sala del Congreso elevó la tensión entre los parlamentarios y varias diputadas de izquierda abandonaron el hemiciclo acusando de "negacionistas" a los partidos de oposición, que promovieron la iniciativa.
-
-
-                           </td>
+                      <td>
+                        ESPACIO NOTICIA 
+                      </td>
                     </tr>
                     <tr>
-                        <td class="imagen"><img class="imagen" alt="NoticiaG3" src="./assets/img/NoticiaG3.jpg" width="600" height="600"></td>
+                      <td class="imagen"><img class="img-fluid" alt="NoticiaG3" src="./assets/img/NoticiaG3.jpg"></td>
                     </tr>
-                     <!-- NOTICIA 3 -->
-
-<!-- videos y audios -->
-                </tbody>
-            </table>
+                    <!-- NOTICIA 3 -->
+                  </tbody>
+                </table>
+              
+              
             <video controls>
                 <source src="./assets/video-audio/videorusia.mp4" type="video/mp4">
                 Actualiza tu navegador, quizas por eso no se ve el video
@@ -148,89 +122,57 @@ Además, el MOP ya trabaja en el proceso de licitación para reparar la vía da�
                 <source src="./assets/video-audio/audiovallejo.mp3" type="audio/mpeg">
                 Actualiza tu navegador, quizas por eso no se escucha el audio
             </audio>
-        </div>
     </section>
     
 
     <section id="Deportes" class="Deportes container">
         <h1>Sección de Deportes</h1>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th><h2>Noticia de Deportes</h2></th>
-                    </tr>
-                </thead>
-                <tbody>
-
-
-                    <!-- NOTICIA 1 -->
-                    <tr>
-                        <td><a href="https://www.msn.com/es-cl/deportes/futbol/la-denuncia-que-sacude-al-f%C3%BAtbol-chileno-suma-un-nuevo-cap%C3%ADtulo-esto-har%C3%A1-la-anfp/ar-AA1fGxZe" target="_blank"><h3>La denuncia que sacude al fútbol chileno suma un nuevo capítulo: esto hará la ANFP</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td>La grave denuncia en relación a un supuesto arreglo de la final del Ascenso 2022 entre Copiapó y Cobreloa desató un nuevo escándalo en el fútbol chileno. ¿La razón? David Escalante, delantero del cuadro loíno, lanzó potentes acusaciones y contó detalles desconocidos de ese plantel que no pudo ascender.
-
-                            “Teníamos muchos compañeros que estaban perdidos en las apuestas. La duda está, pero no hay pruebas. No nos pueden echar la culpa a todos tampoco, si no tienen prueba, tienen que salir a decir con nombre y apellido. Y si tienen prueba, hay que mandarlos a la cana, como tiene que ser”, señaló este martes a DSports.
-                            
-                            Las declaraciones de Escalante generaron revuelo en la ANFP. Este miércoles, y luego del término de una nueva reunión de directorio del organismo, la institución decidió llevar los antecedentes y generar una denuncia en la Fiscalía para que investigue penalmente. Los dirigentes consideran que, en caso de que las denuncian sean ciertas, son demasiado graves.
-                            
-                            Hasta ahora, eso sí, se desconoce cuánto tiempo tomará la investigación para comprobar si es que realmente hay futbolistas vinculados a las apuestas.
-                             </td>
-                    </tr>
-                    <tr>
-                        <td class="imagen"><img class="imagen" src="./assets/img/deporte1.jpg" width="600" height="600" alt="deporte1"></td>
-                        <div class="contador-articulos">
-                            <p>Artículos: <span id="contador-articulos">0</span></p>
-                        </div>
-                    </tr>
-                    
-                    
-                     <!-- NOTICIA 1 -->
-
-                     
-                    <!-- NOTICIA 2 -->
-                    <tr>
-                        <td><a href="https://www.msn.com/es-cl/deportes/noticias/los-cruces-para-las-semifinales-nacionales-de-la-copa-chile-2023/ar-AA1fH2tZ" target="_blank"><h3>Los cruces para las semifinales nacionales de la Copa Chile 2023 </h3></a></td>
-                    </tr>
-                    <tr>
-                        <td>La Copa Chile 2023 ya definió a sus cuatro campeones regionales y cerró los enfrentamientos que tendrán lugar en las semifinales nacionales del certamen.
-
-                            Cobreloa conquistó la Zona Norte ante Cobresal y Colo Colo hizo lo propio en el territorio Centro Norte contra Universidad Católica. Magallanes se impuso por penales a O'Higgins en la definición Centro Sur y Universidad de Concepción tumbó a Temuco en el Sur.
-                            
-                            Las series se separarán en mitades geográficas, por lo que los curces serán entre los ganadores Norte y Centro Norte; y Centro Sur contra Sur.
-                            
-                            Los partidos aún no son programados. 
-                            
-                            Revisa las llaves semifinales de la Copa Chile 2023:
-                            
-                            Cobreloa vs. Colo Colo
-                            Magallanes vs. Universidad de Concepción
-                            </td>
-                    </tr>
-                    <tr>
-                        <td class="imagen"><img class="imagen" alt="deporte2" src="./assets/img/deporte2.jpg" width="600" height="600"></td>
-                    </tr>
-                     <!-- NOTICIA 2 -->
-
-                     
-                    <!-- NOTICIA 3 -->
-                    <tr>
-                        <td><a href="https://www.msn.com/es-cl/deportes/futbol/suspendido-colo-colo-y-magallanes-no-se-juega-este-fin-de-semana/ar-AA1fGDQL" target="_blank"><h3>¡Suspendido! Colo Colo y Magallanes no se juega este fin de semana </h3></a></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            En Estados Unidos la tasa de interés aplicada a los préstamos hipotecarios a tipo fijo y un plazo de 30 años se ha situado la última semana en el 7,31%, su nivel más alto desde diciembre del año 2000, mientras que la demanda de hipotecas para la adquisición de viviendas se hundía a mínimos desde abril de 1995, según los datos de la Asociación de Banqueros Hipotecarios (MBA). </td>
-                    </tr>
-                    <tr>
-                        <td class="imagen"><img class="imagen" alt="deporte3" src="./assets/img/deporte3.jpg" width="600" height="600"></td>
-                    </tr>
-                     <!-- NOTICIA 3 -->
-
-
-                </tbody>
+        <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th><h2>Noticia de Deportes</h2></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- NOTICIA 1 -->
+                <tr>
+                  <td><a href="https://www.msn.com/es-cl/deportes/futbol/la-denuncia-que-sacude-al-f%C3%BAtbol-chileno-suma-un-nuevo-cap%C3%ADtulo-esto-har%C3%A1-la-anfp/ar-AA1fGxZe" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
+                </tr>
+                <tr>
+                  <td>ESPACIO NOTICIA</td>
+                </tr>
+                <tr>
+                  <td class="imagen"><img class="img-fluid" src="./assets/img/deporte1.jpg" alt="deporte1"></td>
+                </tr>
+                <!-- NOTICIA 1 -->
+          
+                <!-- NOTICIA 2 -->
+                <tr>
+                  <td><a href="https://www.msn.com/es-cl/deportes/noticias/los-cruces-para-las-semifinales-nacionales-de-la-copa-chile-2023/ar-AA1fH2tZ" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
+                </tr>
+                <tr>
+                  <td>ESPACIO NOTICIA</td>
+                </tr>
+                <tr>
+                  <td class="imagen"><img class="img-fluid" alt="deporte2" src="./assets/img/deporte2.jpg"></td>
+                </tr>
+                <!-- NOTICIA 2 -->
+          
+                <!-- NOTICIA 3 -->
+                <tr>
+                  <td><a href="https://www.msn.com/es-cl/deportes/futbol/suspendido-colo-colo-y-magallanes-no-se-juega-este-fin-de-semana/ar-AA1fGDQL" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
+                </tr>
+                <tr>
+                  <td>ESPACIO NOTICIA</td>
+                </tr>
+                <tr>
+                  <td class="imagen"><img class="img-fluid" alt="deporte3" src="./assets/img/deporte3.jpg"></td>
+                </tr>
+                <!-- NOTICIA 3 -->
+              </tbody>
             </table>
-        </div>
+          </div>             
     </section>
 
 
@@ -241,76 +183,54 @@ Además, el MOP ya trabaja en el proceso de licitación para reparar la vía da�
 
     <section id="Negocios" class="Negocios container">
         <h1>Sección de Negocios</h1>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th><h2>Noticia de Negocios</h2></th>
-                    </tr>
-                </thead>
-                <tbody>
-
-
-                    <!-- NOTICIA 1 -->
-                    <tr>
-                        <td><a href="https://www.msn.com/es-cl/dinero/noticias/ipsa-logra-ganancias-por-segundo-d%C3%ADa-consecutivo-en-l%C3%ADnea-con-la-tendencia-global/ar-AA1fFT27" target="_blank"><h3>IPSA logra ganancias por segundo día consecutivo en línea con la tendencia global</h3></a></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Las bolsas globales repuntaron en una jornada marcada por datos de relevancia en EEUU y Europa, y a la espera del discurso de Jerome Powell y Christine Lagarde en el simposio de Jackson Hole.
-
-El IPSA subió un 0,49% a 6.189,20 puntos.
-
-“En EE.UU. se acaba de publicar los PMIs preliminares de agosto: PMI Compuesto 50,4 (vs 52,0e y anterior), PMI Manufacturero 47,0 (vs 49,3e y 49,0 anterior) y PMI de Servicios 51,0 (vs 52,3e y anterior). Todos los PMI por debajo de lo esperado lo que da cuenta de la desaceleración de la economía norteamericana, lo que aumenta las probabilidades que la FED no suba la tasa en la próxima reunión del 20 de septiembre”, dijo Guillermo Araya de Renta 4.
-
-José Agustín Cristi de Zurich AGF puntualizó que “este buen rendimiento se debe a que el mercado espera que Jerome Powell en su discurso de mañana entregue señales de moderación sobre la trayectoria de las tasas de interés. Otro factor que ha gatillado este rendimiento son las altas expectativas en el reporte de resultados de las compañías ligadas a la inteligencia artificial”.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="imagen"><img class="imagen" src="./assets/img/negocio1.jpg" width="600" height="600" alt="noticia1"></td>
-                        <div class="contador-articulos">
-                            <p>Artículos: <span id="contador-articulos">0</span></p>
-                        </div>
-                    </tr>
-                     <!-- NOTICIA 1 -->
-
-                     
-                    <!-- NOTICIA 2 -->
-                    <tr>
-                        <td><a href="https://www.msn.com/es-cl/dinero/noticias/d%C3%B3lar-cierra-con-fuerte-ca%C3%ADda-ante-precio-del-cobre-y-previo-a-discurso-de-powell/ar-AA1fFsUy" target="_blank"><h3>Dólar cierra con fuerte caída ante precio del cobre y previo a discurso de Powell </h3></a></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            El dólar cerró con fuertes retrocesos en una sesión en que volvió a repuntar el cobre, y donde los mercados están muy atentos a lo que ocurrirá desde este jueves en el simposio de Jackson Hole.
-
-                            La divisa estadounidense cerró en $856,15 lo que implica una baja de $13,35 con respecto al martes.
-                            
-                            “Mañana comenzará el Simposio de Jackson Hole, que reúne a los líderes mundiales en el ámbito económico y monetario, donde el mayor foco de atención estará el viernes con los comentarios de Jerome Powell, presidente de la Reserva Federal de EEUU, que podrían generar volatilidad cambiaria”, dijo Ricardo Bustamante de Capitaria.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="imagen"><img class="imagen" alt="noticia2" src="./assets/img/negocio2.jpg" width="600" height="600"></td>
-                    </tr>
-                     <!-- NOTICIA 2 -->
-
-                     
-                    <!-- NOTICIA 3 -->
-                    <tr>
-                        <td><a href="https://www.msn.com/es-cl/noticias/other/las-tasas-de-los-cr%C3%A9ditos-hipotecarios-en-eeuu-escalaron-a-m%C3%A1ximos-de-los-%C3%BAltimos-23-a%C3%B1os/ar-AA1fGMs7" target="_blank"><h3>Las tasas de los créditos hipotecarios en EEUU escalaron a máximos de los últimos 23 años </h3> </a></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            En Estados Unidos la tasa de interés aplicada a los préstamos hipotecarios a tipo fijo y un plazo de 30 años se ha situado la última semana en el 7,31%, su nivel más alto desde diciembre del año 2000, mientras que la demanda de hipotecas para la adquisición de viviendas se hundía a mínimos desde abril de 1995, según los datos de la Asociación de Banqueros Hipotecarios (MBA). </td>
-                    </tr>
-                    <tr>
-                        <td class="imagen"><img class="imagen" alt="noticia3" src="./assets/img/negocio3.jpg" width="600" height="600"></td>
-                    </tr>
-                     <!-- NOTICIA 3 -->
-
-
-                </tbody>
+        
+        <div class="table-responsive">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+                <tr>
+                  <th><h2>Noticia de Negocios</h2></th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- NOTICIA 1 -->
+                <tr>
+                  <td><a href="https://www.msn.com/es-cl/dinero/noticias/ipsa-logra-ganancias-por-segundo-d%C3%ADa-consecutivo-en-l%C3%ADnea-con-la-tendencia-global/ar-AA1fFT27" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
+                </tr>
+                <tr>
+                  <td>ESPACIO NOTICIA</td>
+                </tr>
+                <tr>
+                  <td class="imagen"><img class="img-fluid" src="./assets/img/negocio1.jpg" alt="noticia1"></td>
+                  
+                </tr>
+                <!-- NOTICIA 1 -->
+          
+                <!-- NOTICIA 2 -->
+                <tr>
+                  <td><a href="https://www.msn.com/es-cl/dinero/noticias/d%C3%B3lar-cierra-con-fuerte-ca%C3%ADda-ante-precio-del-cobre-y-previo-a-discurso-de-powell/ar-AA1fFsUy" target="_blank"><h3>TITULO NOTICIA </h3></a></td>
+                </tr>
+                <tr>
+                  <td>ESPACIO NOTICIA</td>
+                </tr>
+                <tr>
+                  <td class="imagen"><img class="img-fluid" alt="noticia2" src="./assets/img/negocio2.jpg"></td>
+                </tr>
+                <!-- NOTICIA 2 -->
+          
+                <!-- NOTICIA 3 -->
+                <tr>
+                  <td><a href="https://www.msn.com/es-cl/noticias/other/las-tasas-de-los-cr%C3%A9ditos-hipotecarios-en-eeuu-escalaron-a-m%C3%A1ximos-de-los-%C3%BAltimos-23-a%C3%B1os/ar-AA1fGMs7" target="_blank"><h3>TITULO NOTICIA </h3> </a></td>
+                </tr>
+                <tr>
+                  <td> ESPACIO NOTICIA</td>
+                </tr>
+                <tr>
+                  <td class="imagen"><img class="img-fluid" alt="noticia3" src="./assets/img/negocio3.jpg"></td>
+                </tr>
+                <!-- NOTICIA 3 -->
+              </tbody>
             </table>
-        </div>
+          </div>
     </section>
 
     <section id="Contacto" class="container">
@@ -332,8 +252,34 @@ José Agustín Cristi de Zurich AGF puntualizó que “este buen rendimiento se 
 
 
 
-    <footer class="site-footer">
-            <p>&copy; 2023 Jesus Seiler - Jaime Llanca - Mauricio Morel . Hecha para la presentación de HTML5.<img src="./assets/img/html5.png" alt="img html5" class="html5-icon"></p>
-    </footer>
+   <footer class="site-footer navbar-dark bg-dark">
+    <!-- Contenedor para alinear el contenido del footer -->
+    
+        <p class="navbar-text">
+            &copy; 2023 Jesus Seiler - Jaime Llanca - Mauricio Morel . Hecha para la presentación de HTML5,CSS,JS,Bootstrap,Ajax.
+            <img src="./assets/img/html5.png" alt="img html5" class="html5-icon">
+        </p>
+    
+</footer>
+
+  <!--Ajax-->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <!--jQuery 3.3.1 -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+  <!--Popper JS 1.14.3-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
+
+  <!--Bootstrap JS 4.2.1-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
+  <!-- mi script -->
+  <script src="./assets/js/script.js"></script>
+
 </body>
 </html>

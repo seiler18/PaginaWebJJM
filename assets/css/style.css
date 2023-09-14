@@ -1,11 +1,25 @@
 /* Estilos generales */
+
 body {
     font-family: Raleway, sans-serif;
     margin: 0;
     padding: 0;
     background: #f5f5f5;
 }
+.navegacion {
+    font-size: 20px;
+}	
 
+.navegacion .navbar-nav .nav-link {
+    color: white; /* Color de texto blanco */
+    text-decoration: none; /* Elimina el subrayado */
+    transition: color 0.3s ease; /* Transición de color al pasar el mouse */
+}
+
+.navegacion .navbar-nav .nav-link:hover {
+    color: #ff9900; /* Color al pasar el mouse */
+}
+    
 /* Títulos */
 h1 {
     font-size: 40px;
@@ -32,7 +46,6 @@ main {
     align-items: center;
     justify-content: center; /* Centra verticalmente el contenido */
     min-height: 100vh; /* Asegura que el contenido ocupe al menos el alto de la ventana */
-    padding: 20px;
 }
 
 /* Secciones con Flexbox */
@@ -48,7 +61,7 @@ section {
 
 .fecha-hora-banner {
     flex: 1;
-    width: 80%;
+    width: 60%;
     text-align: center;
     padding: 20px;
     border: 5px solid black;
@@ -98,40 +111,8 @@ video, audio {
     width: 100%;
 }
 
-/* Barra de navegación */
-nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #000;
-    z-index: 1000;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 25px;
-    transition: color 0.3s ease, text-decoration 0.3s ease; /* Agregado para transición de text-decoration */
-}
-
-nav a:link {
-    color: black; /* Color de enlace normal */
-    text-decoration: underline; /* Subrayado en el enlace normal */
-}
 
 a:link{
     color: black; /* Color de enlace normal */
@@ -142,16 +123,13 @@ a:hover{
     text-decoration: none; /* Subrayado en el enlace normal */
 }
 
-nav a:hover {
-    color: #ff9900;
-    text-decoration: none; /* Quitar subrayado al pasar el mouse */
-}
 
 /* Banner */
 .banner {
     text-align: center;
     position: relative;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
 }
 
 .banner img {
@@ -171,19 +149,15 @@ nav a:hover {
     color: #31231e;
     padding: 20px 0;
     text-align: center;
+    font-size: 20px;
 }
 
 .footer-bottom p {
     margin: 0;
 }
 
-/* PARA TELEFONOS */
-@media (max-width: 768px) {
-    section {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
+
+
 
 /* Estilos para el formulario de contacto */
 #Contacto {
