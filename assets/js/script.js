@@ -62,4 +62,30 @@ function actualizarContadorPorSeccion() {
 // Llama a la función al cargar la página para mostrar la cantidad inicial
 window.addEventListener('load', actualizarContadorPorSeccion);
 
-
+// --------------------------APARTADO DE AJAX-------------------------------
+$(document).ready(function() {
+    // Realiza una petición AJAX para cargar el contenido del archivo JSON
+    $.ajax({
+        url: 'assets/noticias/generales.json',// Reemplaza con la ruta correcta
+      dataType: 'json',
+      success: function(data) {
+        // Accede a los datos del JSON
+        var titulo = data.titulo;
+        var contenido = data.contenido;
+        var visitas = data.visitas;
+        var imagen = data.imagen;
+  
+        // Muestra el título, contenido y número de visitas en tu página
+        $('#noticia-container').append('<h3>' + titulo + '</h3>');
+        $('#noticia-container').append('<p>' + contenido + '</p>');
+        $('#visitas-container').text('Visitas: ' + visitas);
+  
+        // Carga la imagen en tu página
+        $('#imagen-container').append('<img src="' + imagen + '" alt="Imagen de la noticia">');
+      },
+      error: function() {
+        // Maneja errores de la petición AJAX si es necesario
+        console.log('Error al cargar la noticia.');
+      }
+    });
+  });
