@@ -66,58 +66,21 @@
     <!-- SECCION DE MIS NOTICIAS -->
     
     <section id="Noticias" class="Noticias container">
-        <h1>&copy;El Faro - Bienvenidos </h1>
-        
-            <div class="table-responsive">
-                <table class="table table-striped" description="tabla noticias">
-                  <thead class="thead-dark">
-                    <tr>
-                      <th><h2>Noticias Destacadas</h2></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- NOTICIA 1 -->
-                    <tr>
-                      <td><a href="https://www.msn.com/es-cl/noticias/other/rusia-confirma-la-muerte-de-yevgeny-prigozhin-jefe-del-grupo-wagner-a-dos-meses-de-desafiar-a-putin/ar-AA1fGANH" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
-                    </tr>
-                    <tr>
-                      <td>ESPACIO NOTICIA</td>
-                    </tr>
-                    <tr>
-                      <td class="imagen"><img class="img-fluid" src="./assets/img/NoticiaG1.jpg" alt="NoticiaG1"></td>
-                    </tr>
-                    <!-- NOTICIA 1 -->
-              
-                    <!-- NOTICIA 2 -->
-                    <tr>
-                      <td><a href="https://www.msn.com/es-cl/noticias/chile/edificio-kandinsky-la-torre-de-exclusivos-departamentos-que-podr%C3%ADa-derrumbarse-tras-las-lluvias/ar-AA1fGR2G" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
-                    </tr>
-                    <tr>
-                      <td>
-                        ESPACIO NOTICIA
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="imagen"><img class="img-fluid" alt="NoticiaG2" src="./assets/img/NoticiaG2.jpg"></td>
-                    </tr>
-                    <!-- NOTICIA 2 -->
-              
-                    <!-- NOTICIA 3 -->
-                    <tr>
-                      <td><a href="https://www.msn.com/es-cl/noticias/chile/ministra-vallejo-quienes-justifican-el-golpe-de-estado-podr%C3%ADan-darlo-hoy/ar-AA1fGFNT" target="_blank"><h3>TITULO NOTICIA</h3></a></td>
-                    </tr>
-                    <tr>
-                      <td>
-                        ESPACIO NOTICIA 
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="imagen"><img class="img-fluid" alt="NoticiaG3" src="./assets/img/NoticiaG3.jpg"></td>
-                    </tr>
-                    <!-- NOTICIA 3 -->
-                  </tbody>
-                </table>
-    </section>
+      <h1>&copy;El Faro - Bienvenidos </h1>
+      <div class="table-responsive">
+          <table class="table table-striped" description="tabla noticias">
+              <thead class="thead-dark">
+                  <tr>
+                      <th><h2>Noticia mas destacada con <span id="visitas-noticia-destacada"></span> </h2></th>
+                  </tr>
+              </thead>
+              <tbody id="noticia-destacada">
+                  <!-- Aquí se mostrará la noticia más destacada -->
+              </tbody>
+          </table>
+      </div>
+  </section>
+  
     
 
 
@@ -173,6 +136,76 @@
   </script>
   <!-- mi script -->
   <script src="./assets/js/script.js"></script>
+  <script>
+    $(document).ready(function () {
+        // Rutas de los archivos JSON
+        var archivosJSON = {
+            'generales': 'assets/noticias/generales.json',
+            'economia': 'assets/noticias/economia.json',
+            'deportes': 'assets/noticias/deportes.json'
+        };
 
+        // Variable para almacenar la noticia más destacada
+        var noticiaMasDestacada = {
+            visitas: -1
+        };
+
+        // Función para cargar y encontrar la noticia más destacada
+        function cargarYEncontrarNoticiaMasDestacada(categoria) {
+            $.ajax({
+                url: archivosJSON[categoria],
+                dataType: 'json',
+                success: function (data) {
+                    var noticias = data.noticias;
+
+                    noticias.forEach(function (noticia) {
+                        var visitas = noticia.visitas;
+
+                        // Comprobar si esta noticia tiene más visitas que la actual
+                        if (visitas > noticiaMasDestacada.visitas) {
+                            noticiaMasDestacada = noticia;
+                        }
+                    });
+
+                    // Mostrar la noticia más destacada en el marcador de posición
+                    mostrarNoticiaMasDestacada();
+                },
+                error: function () {
+                    console.log('Error al cargar las noticias de ' + categoria + '.');
+                }
+            });
+        }
+
+        // Función para mostrar la noticia más destacada en el marcador de posición
+        function mostrarNoticiaMasDestacada() {
+          if (noticiaMasDestacada.visitas > -1) {
+              var titulo = noticiaMasDestacada.titulo;
+              var contenido = noticiaMasDestacada.contenido;
+              var imagen = noticiaMasDestacada.imagen;
+              var visitas = noticiaMasDestacada.visitas;
+      
+              var filaNoticia = '<tr>';
+              filaNoticia += '<td><h3>' + titulo + '</h3></td>';
+              filaNoticia += '</tr>';
+              filaNoticia += '<tr>';
+              filaNoticia += '<td>' + contenido + '</td>';
+              filaNoticia += '</tr>';
+              filaNoticia += '<tr>';
+              filaNoticia += '<td class="imagen"><img class="img-fluid" src="' + imagen + '" alt="Imagen de la noticia"></td>';
+              filaNoticia += '</tr>';
+      
+              // Actualiza el número de visitas en el span correspondiente
+              $('#visitas-noticia-destacada').text('Visitas: ' + visitas);
+      
+              $('#noticia-destacada').html(filaNoticia);
+          }
+        }
+
+          
+        cargarYEncontrarNoticiaMasDestacada('generales');
+        cargarYEncontrarNoticiaMasDestacada('economia');
+        cargarYEncontrarNoticiaMasDestacada('deportes');
+    });
+</script>
 </body>
 </html>

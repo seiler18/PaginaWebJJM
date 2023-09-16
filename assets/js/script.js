@@ -42,50 +42,63 @@ function enviarFormulario(event) {
 }
 
 
-// Función para contar y actualizar el contador de artículos por sección
-function actualizarContadorPorSeccion() {
-    // Selecciona todas las secciones de noticias
-    const seccionesNoticias = document.querySelectorAll('.Noticias, .Deportes, .Negocios');
-
-    // Recorre todas las secciones de noticias
-    seccionesNoticias.forEach(seccion => {
-        const contadorArticulos = seccion.querySelector('.contador-articulos');
-        const articulosEnSeccion = seccion.querySelectorAll('tbody tr'); // Ajusta el selector según tu estructura HTML
-
-        // Actualiza el contador de la sección
-        if (contadorArticulos && articulosEnSeccion) {
-            contadorArticulos.textContent = articulosEnSeccion.length;
-        }
-    });
-}
-
-// Llama a la función al cargar la página para mostrar la cantidad inicial
-window.addEventListener('load', actualizarContadorPorSeccion);
 
 // --------------------------APARTADO DE AJAX-------------------------------
 $(document).ready(function() {
-    // Realiza una petición AJAX para cargar el contenido del archivo JSON
-    $.ajax({
-        url: 'assets/noticias/generales.json',// Reemplaza con la ruta correcta
-      dataType: 'json',
-      success: function(data) {
-        // Accede a los datos del JSON
-        var titulo = data.titulo;
-        var contenido = data.contenido;
-        var visitas = data.visitas;
-        var imagen = data.imagen;
+    // obteniendo paginas
+    var paginaActual = window.location.pathname.split('/').pop().split('.').shift();
+
+    // definiendo paginas
+    var archivosJSON = {
+        'Ngeneral': 'generales.json',
+        'Neconomia': 'economia.json',
+        'Ndeporte': 'deportes.json'
+    };
+
+    // verificacion
+    if (archivosJSON.hasOwnProperty(paginaActual)) {
+        var archivoJSON = archivosJSON[paginaActual];
+
+        // Realiza una petición AJAX para cargar el contenido del archivo JSON
+        $.ajax({
+            url: 'assets/noticias/' + archivoJSON,
+            dataType: 'json',
+            success: function(data) {
+                var noticias = data.noticias;
+                var tablaNoticias = $('#' + paginaActual + '-container').find('tbody');
+
+                noticias.forEach(function(noticia) {
+                    var titulo = noticia.titulo;
+                    var contenido = noticia.contenido;
+                    var visitas = noticia.visitas;
+                    var imagen = noticia.imagen;
+
+                    var filaNoticia = '<tr>';
+                    filaNoticia += '<td><h3>' + titulo + '</h3></td>';
+                    filaNoticia += '</tr>';
+                    filaNoticia += '<tr>';
+                    filaNoticia += '<td>' + contenido + '</td>';
+                    filaNoticia += '</tr>';
+                    filaNoticia += '<tr>';
+                    filaNoticia += '<td><img src="' + imagen + '" alt="Imagen de la noticia" class="img-fluid"></td>';
+                    filaNoticia += '</tr>';
+                    filaNoticia += '<tr>';
+                    filaNoticia += '<td><b>Visitas:</b> ' + visitas + '</td>';
+                    filaNoticia += '</tr>';
+
+                    tablaNoticias.append(filaNoticia);
+                });
+            },
+            error: function() {
+                console.log('Error al cargar las noticias.');
+            }
+        });
+    } else {
+        console.log('Página no encontrada en la lista de archivos JSON.');
+    }
+});
+
+
+
+
   
-        // Muestra el título, contenido y número de visitas en tu página
-        $('#noticia-container').append('<h3>' + titulo + '</h3>');
-        $('#noticia-container').append('<p>' + contenido + '</p>');
-        $('#visitas-container').text('Visitas: ' + visitas);
-  
-        // Carga la imagen en tu página
-        $('#imagen-container').append('<img src="' + imagen + '" alt="Imagen de la noticia">');
-      },
-      error: function() {
-        // Maneja errores de la petición AJAX si es necesario
-        console.log('Error al cargar la noticia.');
-      }
-    });
-  });
