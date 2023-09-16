@@ -52,7 +52,9 @@ $(document).ready(function() {
     var archivosJSON = {
         'Ngeneral': 'generales.json',
         'Neconomia': 'economia.json',
-        'Ndeporte': 'deportes.json'
+        'Ndeporte': 'deportes.json',
+        'index': 'index.json'
+
     };
 
     // verificacion
@@ -99,6 +101,48 @@ $(document).ready(function() {
 });
 
 
+function agregarNoticia(event) {
+    event.preventDefault();
 
+    // Obtener datos del formulario
+    var categoria = document.getElementById('categoria').value;
+    var titulo = document.getElementById('titulo').value;
+    var contenido = document.getElementById('contenido').value;
+    var imagen = document.getElementById('imagen').value; // Aquí deberías manejar la imagen adecuadamente
+
+    // Crear un objeto con los datos de la nueva noticia
+    var nuevaNoticia = {
+        titulo: titulo,
+        contenido: contenido,
+        imagen: imagen,
+        visitas: 0 // Inicialmente, puedes establecer las visitas en 0
+    };
+
+    // Cargar el archivo JSON existente
+    $.ajax({
+        url: 'assets/noticias/' + categoria + '.json',
+        dataType: 'json',
+        success: function(data) {
+            // Obtener la lista de noticias existentes
+            var noticias = data.noticias;
+
+            // Agregar la nueva noticia a la lista
+            noticias.push(nuevaNoticia);
+
+            // Mostrar la nueva noticia en la página (puedes hacerlo aquí o redirigir a la página de noticias)
+            mostrarNuevaNoticia(nuevaNoticia);
+
+            // Mostrar un mensaje de confirmación al usuario
+            alert('Noticia agregada con éxito.');
+        },
+        error: function() {
+            console.log('Error al cargar el archivo JSON de ' + categoria);
+        }
+    });
+
+    function mostrarNuevaNoticia(nuevaNoticia) {
+    //   Esta seria una funcion a futuro para mostrar la noticia y pushearla en el json ,pero para ello necesitamos trabajar con backend como php por ejemplo.
+    }
+}
 
   

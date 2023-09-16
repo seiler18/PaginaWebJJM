@@ -80,7 +80,44 @@
           </table>
       </div>
   </section>
-  
+
+
+  <section id="Noticias" class="Noticias container">
+    <h1>Agrega tu noticia</h1>
+    <div class="container">
+        <form id="formulario-noticia" onsubmit="agregarNoticia(event)">
+          <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <select class="form-control" id="categoria" name="categoria" required>
+              <option value="generales">Generales</option>
+              <option value="deportes">Deportes</option>
+              <option value="economia">Economía</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="contenido">Contenido:</label>
+            <textarea class="form-control" id="contenido" name="contenido" rows="4" required></textarea>
+          </div>
+      
+          <div class="form-group">
+            <label for="imagen">Imagen:</label>
+            <input type="file" class="form-control-file" id="imagen" name="imagen" accept="image/*" required>
+          </div>
+      
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Agregar Noticia</button>
+          </div>
+        </form>
+      </div>
+      
+
+</section>
     
 
 
