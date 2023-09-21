@@ -145,4 +145,42 @@ function agregarNoticia(event) {
     }
 }
 
+// Función para registrar un nuevo usuario
+function registrarUsuario(event) {
+    event.preventDefault();
+
+    // Obtener datos del formulario de registro
+    var nombreUsuario = document.getElementById('nombreUsuario').value;
+    var correoUsuario = document.getElementById('correo').value;
+    var contraseñaUsuario = document.getElementById('contrasena').value;
+    var confirmarContraseña = document.getElementById('confirmarContrasena').value;
+
+    // Validar los datos del formulario
+    if (nombreUsuario === '' || correoUsuario === '' || contraseñaUsuario === '' || confirmarContraseña === '') {
+        alert('Por favor, complete todos los campos.');
+        return;
+    }
+
+    if (contraseñaUsuario !== confirmarContraseña) {
+        alert('Las contraseñas no coinciden. Por favor, vuelva a intentarlo.');
+        return;
+    }
+
+    // Crear un objeto con los datos del nuevo usuario
+    var nuevoUsuario = {
+        nombre: nombreUsuario,
+        correo: correoUsuario,
+        contraseña: contraseñaUsuario
+    };
+
+    // Aquí puedes enviar los datos del nuevo usuario al servidor o almacenarlos en tu base de datos
+    // Puedes usar AJAX para enviar los datos al servidor, pero esto requerirá una implementación en el backend (por ejemplo, con PHP)
+    // Por ahora, simularemos el registro mostrando un mensaje de éxito
+    alert('Usuario registrado con éxito.');
+    console.log('Nuevo usuario:', nuevoUsuario);
+}
+
+// Agregar un evento de escucha al formulario de registro
+document.getElementById('formulario-registro').addEventListener('submit', registrarUsuario);
+
   
